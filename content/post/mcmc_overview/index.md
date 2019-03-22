@@ -1,5 +1,5 @@
 +++
-title = "Markov Chain Monte Carlo (MCMC)"
+title = "Markov Chain Monte Carlo"
 subtitle = ""
 
 # Add a summary to display on homepage (optional).
@@ -37,6 +37,23 @@ categories = []
   # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
   focal_point = ""
 +++
+Markov chain Monte Carlo methods are stochastic (as opposed to deterministic)
+approximation schemes which allow us to sample from complicated multi-dimensional
+distributions. Briefly put, the main idea is to construct a Markov chain on the
+state space whose stationary distribution is the density $p^\*(x)$ we wish to
+sample from.
+
+Wait, what? Can you repeat that?
+
+Yep, this general method builds up on a lot of concepts, which I won't have time
+(or space) to explore in one single article. Let's be honest, you wouldn't
+read the whole thing anyway.
+
+Sooo, here is the deal. I have been reading a lot (_a lot_ 🤓) of papers on this
+issue, and one of the things that really confused me was that I could not order
+or organize the different approaches in my head. So this first article is for
+those who already have a basic understanding of MCMC and wish to dig deeper but
+are, as I still am, often overwhelmed by this micro-field's jargon.
 
 * **Metropolis Hastings algorithm**
   * **Metropolis algorithm**: Here, the proposal distribution is symmetric, meaning
