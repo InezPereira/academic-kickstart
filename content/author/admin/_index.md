@@ -19,7 +19,7 @@ organizations = [ { name = "ETH Zurich", url = "" } ]
 bio = "My research interests include using modelling approaches to better understand neurological and psychiatric diseases."
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email = ""
+email = "pereira.inez@gmail.com"
 
 # List (academic) interests or hobbies
 interests = [
@@ -33,10 +33,10 @@ interests = [
 user_groups = ["Researchers", "Visitors"]
 
 # List qualifications (such as academic degrees)
-<!-- [[education.courses]]
-  course = "PhD in Artificial Intelligence"
-  institution = "Stanford University"
-  year = 2012 -->
+#[[education.courses]]
+#  course = "PhD in Artificial Intelligence"
+#  institution = "Stanford University"
+#  year = 2012
 
 [[education.courses]]
   course = "MSc Neural Systems and Computation "
@@ -63,10 +63,10 @@ user_groups = ["Researchers", "Visitors"]
   icon_pack = "fab"
   link = "https://twitter.com/iibpereira"
 
-<!-- [[social]]
-  icon = "google-scholar"
-  icon_pack = "ai"
-  link = "https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" -->
+#[[social]]
+#  icon = "google-scholar"
+#  icon_pack = "ai"
+#  link = "https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ"
 
 [[social]]
   icon = "github"
@@ -83,5 +83,3 @@ user_groups = ["Researchers", "Visitors"]
 +++
 
 Just another human who happens to love combining mathematical modelling and translational research.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
