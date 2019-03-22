@@ -19,7 +19,7 @@ organizations = [ { name = "ETH Zurich", url = "" } ]
 bio = "My research interests include using modelling approaches to better understand neurological and psychiatric diseases."
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email = "pereira.inez@gmail.com"
+email = ""
 
 # List (academic) interests or hobbies
 interests = [
@@ -41,7 +41,7 @@ user_groups = ["Researchers", "Visitors"]
 [[education.courses]]
   course = "MSc Neural Systems and Computation "
   institution = "University of Zurich & ETH Zurich"
-  year = 2009
+  year = 2020
 
 [[education.courses]]
   course = "Medicine"
