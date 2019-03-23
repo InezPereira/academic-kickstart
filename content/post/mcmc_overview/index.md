@@ -46,14 +46,15 @@ sample from.
 Wait, what? Can you repeat that?
 
 Yep, this general method builds up on a lot of concepts, which I won't have time
-(or space) to explore in one single article. Let's be honest, you wouldn't
+(nor space) to explore in one single article. Let's be honest, you wouldn't
 read the whole thing anyway.
 
 Sooo, here is the deal. I have been reading a lot (_a lot_ 🤓) of papers on this
 issue, and one of the things that really confused me was that I could not order
 or organize the different approaches in my head. So this first article is for
 those who already have a basic understanding of MCMC and wish to dig deeper but
-are, as I still am, often overwhelmed by this micro-field's jargon.
+are, as I still am, often overwhelmed by this micro-field's jargon and creative
+mathematical thinking.
 
 * **Metropolis Hastings algorithm**
   * **Metropolis algorithm**: Here, the proposal distribution is symmetric, meaning
