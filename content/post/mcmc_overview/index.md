@@ -6,7 +6,7 @@ subtitle = ""
 summary = "A summarised and on-the-go completed list of MCMC methods"
 
 date = 2019-03-22T19:21:12+01:00
-draft = true
+draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
 authors = []
@@ -79,4 +79,4 @@ mathematical thinking.
 * **Multiple-try Metropolis**
 * **Reversible-jump**
 * **Hamiltonian (or Hybrid) Monte Carlo (HMC)**
-  * **Metropolis-adjusted Langevin algorithm** : When only one deterministic step is used, i.e. L = 1, one obtains the Langevin algorithm, which is a discrete time approximation of a Langevin diffusion process. 
+  * **Metropolis-adjusted Langevin algorithm** : When only one deterministic step is used, i.e. L = 1, one obtains the Langevin algorithm, which is a discrete time approximation of a Langevin diffusion process.
