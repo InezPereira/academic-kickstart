@@ -78,4 +78,5 @@ mathematical thinking.
 * **Slice sampling**
 * **Multiple-try Metropolis**
 * **Reversible-jump**
-* Hamiltonian (or Hybrid) Monte Carlo (HMC)
+* **Hamiltonian (or Hybrid) Monte Carlo (HMC)**
+  * **Metropolis-adjusted Langevin algorithm** : When only one deterministic step is used, i.e. L = 1, one obtains the Langevin algorithm, which is a discrete time approximation of a Langevin diffusion process. 
