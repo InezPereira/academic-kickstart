@@ -38,9 +38,11 @@ categories = []
   focal_point = ""
 +++
 
-As documented on the main webpage, FreeSurfer is an open source software package for the analysis and visualization of structural and functional neuroimaging data. It is developed by the Laboratory for Computational Neuroimaging at the Athinoula A. Martinos Center for Biomedical Imaging.
+FreeSurfer is an open source software package for the analysis and visualization of structural and functional neuroimaging data. It is developed by the Laboratory for Computational Neuroimaging at the Athinoula A. Martinos Center for Biomedical Imaging.
+It's a really useful tool that allow for automated processes with a hint of manual intervention,
+mainly through it's GUI, Freeview.
 
-I have started using FreeSurfer and Freeview  last year and, albeit the documentation being quite
+I started using FreeSurfer and Freeview  last year and, albeit the documentation being quite
 thorough, I had a harder time navigating the website than I expected.
 
 So here are a few tricks to make your handling FreeSurfer's GUI, Freeview, easier
