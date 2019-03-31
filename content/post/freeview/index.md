@@ -78,7 +78,7 @@ So here are a few tricks to make your handling FreeSurfer's GUI, Freeview, easie
  ```
 
  So, if I want to analyze, let's say, subject bert's images, I just open my `freeview.sh`
- script with a text editor and change `'<subject name>'` to `bert` (which is this
+ script with a text editor and change `<subject name>` to `bert` (which is this
  subject's folder name).
  Then, I can open a terminal, navigate to my `subjects/` folder and type:
 
@@ -94,8 +94,8 @@ found by experimenting are:
 
 | Command        | Action        |
 | -------------  |:------------- |
-| Alt + N        | Navigate Tool|
-| Ctrl + E       | Recon Edit Tool|
+| Alt + N        | <img src="navigate.png" style="float: left; margin-right: 10px;"/> Navigate Tool |
+| Ctrl + E       | <img src="recon_edit.png" style="float: left; margin-right: 10px;"/> Recon Edit Tool|
 | Ctrl + F       | Toggle all surfaces |
 | Alt + C        | Alternate between volumes |
 | Ctrl + P       | Toggle left side menu |
@@ -126,6 +126,9 @@ When you're in Voxel/Recon/ROI edit mode:
 
 That conludes this short tutorial about Freeview!
 If you want to read/know more, the full Freeview Guide can be found [here](https://surfer.nmr.mgh.harvard.edu/fswiki/FreeviewGuide).
+
+
+
 
 
   <!-- https://discourse.gohugo.io/t/linking-to-static-files-with-hugo/8282 -->

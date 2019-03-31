@@ -51,8 +51,8 @@ exploration of the state space.
 The following definitions and tips follow the notation and were taken mainly from
 Radford M. Neal's chapter ["MCMC Using Hamiltonian Dynamics"](http://mcmchandbook.net/HandbookChapter5.pdf),
 from the book _Handbook of Markov Chain Monte Carlo_ from Brooks _et al._
-If you're looking for more detailed information on HMC, be sure to check it out.
-That and Michael Betancourt's [conceptual introduction to HMC](https://arxiv.org/abs/1701.02434).
+If you're looking for more detailed information on HMC, be sure to check it out, along with
+Michael Betancourt's [conceptual introduction to HMC](https://arxiv.org/abs/1701.02434).
 They amount to more than 100 pages, but they are very worth your time, if you're
 looking to take a deep dive into the matter.
 
@@ -77,7 +77,7 @@ variables are expensive or impossible to compute.
 A few tricks and good practises to get your hamiltonian Monte Carlo sampler to work:
 
 * **Doing several runs with different random starting states is advisable** (for both preliminary
-and final runs), so that problems with isolated modes can be detected. Note that HMC is no less (or more) vulnerable to problems with isolated modes than other MCMCmethods that make local changes to the state. If isolated modes are found to exist, something needs to be done to solve this problem—just combining runs that are each confined to a single mode is not valid. A modification of HMC with “tempering” along a trajectory (Section 5.5.7) can sometimes help with multiple modes.
+and final runs), so that problems with isolated modes can be detected. Note that HMC is no less (or more) vulnerable to problems with isolated modes than other MCMC methods that make local changes to the state. If isolated modes are found to exist, something needs to be done to solve this problem—just combining runs that are each confined to a single mode is not valid. A modification of HMC with “tempering” along a trajectory (Section 5.5.7) can sometimes help with multiple modes.
 
 * **Tuning $\epsilon$ and $L$**: "It is possible that the best choices of ε and L for reaching equilibrium are different from the best choices once equilibrium is reached, and even at equilibrium, it is possible that the best choices vary from one place to another. If necessary, at each iteration of HMC, ε and L can be chosen randomly from a selection of values that are appropriate for". Ouch, Neal.
   * One rule of thumb could be to make $\epsilon$ proportional to $d^{-1/4}$ to maintain a reasonable acceptance rate.
