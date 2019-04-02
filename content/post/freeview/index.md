@@ -59,7 +59,7 @@ So here are a few tricks to make your handling FreeSurfer's GUI, Freeview, easie
 | Argument       | Action        |
 | --------------- |:-------------- |
 | -v            | load a volume file |
-| -l            | load a a label file |
+| -l            | load a label file |
 | -dti          | load one or more dti volumes |
 | -f            | load a surface |
 | -w            | load waypoints |
@@ -98,10 +98,19 @@ found by experimenting are:
 | -------------  |:------------- |
 | Alt + N        | <img src="navigate.png" style="float: left; margin-right: 10px;"/> Navigate Tool |
 | Ctrl + E       | <img src="recon_edit.png" style="float: left; margin-right: 10px;"/> Recon Edit Tool|
+| Alt + E        | Edit Tool     |
 | Ctrl + F       | Toggle all surfaces |
-| Alt + C        | Alternate between volumes |
+| Alt + C        | Alternate between volumes/surfaces |
 | Ctrl + P       | Toggle left side menu |
 | Ctrl + T       | Point set edit |
+| Ctrl + R       | Reset View     |
+| Alt + X        | Show sagital images |
+| Alt + Y        | Show axial images |
+| Alt + Z        | Show coronal images |
+| Alt + A/D      | Decrease/Increase opacity of currently highlighted volume |
+| Ctrl + D       | Hide brainmask |
+| Alt + F        | Toggle currently highlighted surface |
+| Alt + U        | Show cursor |
 
 You'll find other shortcuts under [this link](https://surfer.nmr.mgh.harvard.edu/fswiki/FreeviewGuide/FreeviewReference/FreeviewKeyboardShortcuts). I'll copy the most useful ones here for convenience:
 
