@@ -49,10 +49,31 @@ menu in the right-hand side, when opening the SPM GUI for DCM for EEG
 
 <img src="spm_menu.png" style="float: left; margin-right: 10px;"/>
 
-- Neural mass models ('NMM'): nonlinear model based on a first order approximation.
+- Neural mass models ('NMM'): nonlinear model based on a first order approximation
+('first order' refering to first order statistics).
   - ’NMDA’ is a variant of the ’NMM’ model which also includes a model of NMDA receptor.
   - ’CMC’ and ’CMM’ are canonical microcircuit models. You'll find, in SPM a 'CMC NMDA',
   basically incorporates a canonical microcircuit model with dedicated parameters
   for the NMDA receptor.
+The neural mass models used in DCM capture this 6-layer anatomical cortical
+ structure by specifying (currently three or four) subpopulations of cell types,
+ occupying the granular, supragranular, and infragranular layers.
 - Neural field models
 - Mean field models (’MFM’): also nonlinear and based on second order approximation.
+
+In the documentation, you'll find:
+
+```
+% Type of model (neuronal)
+%--------------------------------------------------------------------------
+% 'ERP'     - (linear second order NMM slow)
+% 'SEP'     - (linear second order NMM fast)
+% 'CMC'     - (linear second order NMM Canonical microcircuit)
+% 'LFP'     - (linear second order NMM self-inhibition)
+% 'NMM'     - (nonlinear second order NMM first-order moments)
+% 'MFM'     - (nonlinear second order NMM second-order moments)
+% 'CMM'     - (nonlinear second order NMM Canonical microcircuit)
+% 'DEM'     - (functional architecture based on a DEM scheme)
+% 'NMDA'    - (nonlinear second order NMM first-order moments with NMDA receptors)
+% 'CMM_NMDA'- (nonlinear first order Canonical microcircuit with NMDA receptors)
+```
