@@ -98,7 +98,7 @@ found by experimenting are:
 | -------------  |:------------- |
 | Alt + N        | <img src="navigate.png" style="float: left; margin-right: 10px;"/> Navigate Tool |
 | Ctrl + E       | <img src="recon_edit.png" style="float: left; margin-right: 10px;"/> Recon Edit Tool|
-| Alt + E        | Edit Tool     |
+| Alt + E        | <img src="voxel_edit.png" style="float: left; margin-right: 10px;"/> Voxel Edit Tool     |
 | Ctrl + F       | Toggle all surfaces |
 | Alt + C        | Alternate between volumes/surfaces |
 | Ctrl + P       | Toggle left side menu |
