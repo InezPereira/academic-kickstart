@@ -135,7 +135,7 @@ When you're in Voxel/Recon/ROI edit mode:
 | Draw / Fill         | Left Click |
 | Erase / Erase Fill | Shift+Left Click |
 
-That conludes this short tutorial about Freeview!
+That concludes this short tutorial about Freeview!
 If you want to read/know more, the full Freeview Guide can be found [here](https://surfer.nmr.mgh.harvard.edu/fswiki/FreeviewGuide).
 
 
