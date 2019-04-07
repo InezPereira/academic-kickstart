@@ -1,6 +1,6 @@
 +++
-title = "Dcm Types"
-subtitle = ""
+title = "DCM for EEG"
+subtitle = "A brief summary of the available models"
 
 # Add a summary to display on homepage (optional).
 summary = ""
@@ -77,3 +77,9 @@ In the documentation, you'll find:
 % 'NMDA'    - (nonlinear second order NMM first-order moments with NMDA receptors)
 % 'CMM_NMDA'- (nonlinear first order Canonical microcircuit with NMDA receptors)
 ```
+
+"Two broad classes of models have been used in DCM for electrophysiological data, namely, synaptic kernel convolution models (Marten et al., 2009; Valdes-Sosa et al., 2009; Wendling et al., 2000; Jansen and Rit, 1995; Lopes da Silva et al., 1976) and conductance- based models (Marreiros et al., 2009, 2010; Breakspear et al., 2003; Brunel and Wang, 2001). For both model classes, the activity of large neuronal populations is approximated by a probability density (see Deco et al., 2008 for review). In our previous exposition ofDCM for SSR, we used a point mass or density to describe interactions of excitatory and inhibitory interneurons and pyramidal cell populations within a cortical source, a so-called neural-mass model (Deco et al., 2008; Moran et al., 2007, 2008). This model was of the kernel type, where postsynaptic responses result from the convolution of presynaptic input with a postsynaptic kernel. While this type of model offers a parsimonious description of population activity, conductance-based models are more directly related to specific synaptic processes. This is because they model different types of ionic currents explicitly, such as passive leak currents and active voltage and ligand-gated currents."
+Consistent spectral predictors for dynamic causal models of steady-state responses, Moran, KES
+
+conductance-based: Marreiros et al. (2009) first described a conductance-based model predicated on the Morris–Lecar (ML) model (Morris and Lecar, 1981).
+The ML model was extended to include three cell populations that are interconnected by means of fast glutamatergic and GABAergic synapses, forming a plausible cortical source.
