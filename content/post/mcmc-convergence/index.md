@@ -50,3 +50,6 @@ categories = []
     * Be aware that chain mixing does not necessarily mean convergence is reached.
 * Once you have reached approximate convergence, mix all the simulations from the second halves of the chains together to summarize the target distribution. For most purposes there is no longer any need to worry about autocorrelations in the chains.
 * Adaptive MCMC
+
+Toolbox available online: [for documentation on the convergence diagnostics implemented](https://research.cs.aalto.fi/pml/software/mcmcdiag/)
+Also available as an external toolbox in [TAPS](https://github.com/translationalneuromodeling/tapas/tree/master/mpdcm/external/mcmcdiag)

@@ -37,6 +37,13 @@ categories = []
   # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
   focal_point = ""
 +++
+
+DCM can be used in two different ways: identification of system
+structure and parameter estimation. The former requires model comparison, i.e., determining which model, from a predefined set of alternatives (model space), best explains a set of empirical obser- vations. Typical differences between models include the absence or presence of certain connections or modulations thereof (entries in matrices A or B). The latter consists in determining the posterior dis- tribution of the parameters ? given experimental observations and a model (Penny et al., 2010). Summary statistics of these distribu- tions can be used, for example, as dependent variables in statistical tests, which can indicate the effect of a treatment or condition on effective \cite{Aponte2016Mpdcm:Modeling}
+
+DCMs consist of two hierarchically related layers: a set of state equations describing neuronal population activity, and an 53 observation model which links neurophysiological states to observed signals and 54 accounts for measurement noise.
+Depending on the specific type of DCM, interactions between neuronal populations and 58 the generation of measurable signals – e.g., blood oxygen level dependent (BOLD) signal 59 in fMRI or scalp voltage fluctuations in EEG – are represented by different nonlinear 60 equations. These nonlinearities prevent exact analytical inference and require the use of 61 approximate or asymptotic inference techniques. To date, variational Bayes under the 62 Laplace approximation (VBL; Friston et al., 2007) has been the method of choice for DCM, 63 partially because of its computational efficiency.(Aponte, thermodynamic integration ...)
+
 The literature surrounding Dynamic Causal Modelling (DCM) can quickly get quite
 confusing, and one the of the things that is hard to find is a list of all the
 current options one has, when one decides to model EEG or fMRI data with DCM.

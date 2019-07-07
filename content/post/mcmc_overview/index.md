@@ -9,7 +9,7 @@ date = 2019-03-22T19:21:12+01:00
 draft = true
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = []
+authors = ["Inês Pereira"]
 
 # Is this a featured post? (true/false)
 featured = true
@@ -66,7 +66,10 @@ mathematical thinking.
   conditional distributions. That means, if you have $q_1$ and $q_2$ as your variables,
   you can evaluate $p(q_1|q_2)$ and $p(q_2|q_1)$.
   The other major thing that is usually pointed out is that you always accept
-  the new sample: $q\_{k}(z*|z) = p(z^\*\_k|z_{\sim k})$
+  the new sample:
+
+  $$q\_{k}(z*|z) = p(z^\*\_k|z_{\sim k})$$
+
   The fact that the acceptance rate is 1 does not mean that Gibbs will converge
   rapidly, since it only updates one coordinate at a time.
   * **Random walk Metropolis algorithm**: the proposal distribution is set as a gaussian

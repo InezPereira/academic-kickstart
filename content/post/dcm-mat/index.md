@@ -1,5 +1,5 @@
 +++
-title = "Analyzing the DCM.mat object"
+title = "DCM struct cheat sheet"
 subtitle = ""
 
 # Add a summary to display on homepage (optional).
@@ -40,7 +40,7 @@ categories = []
 ## DCM for fMRI
 
 What is inside the DCM.mat struct for fMRI?
-This is what you get if you type `help spm_dcm_estimate(`
+This is what you get if you type `help spm_dcm_estimate`
 
 ```
 Expects
@@ -91,43 +91,4 @@ Options
  DCM.AIC                            % Akaike Information criterion
  DCM.BIC                            % Bayesian Information criterion
 
-```
-
-## DCM for energy
-```
-% DCM
-%    name: name string
-%       xY: data   [1x1 struct]
-%       xU: design [1x1 struct]
-%
-%   Sname: cell of source name strings
-%       A: {[nr x nr double]  [nr x nr double]  [nr x nr double]}
-%       B: {[nr x nr double], ...}   Connection constraints
-%       C: [nr x 1 double]
-%
-%   options.Nmodes       - number of spatial modes
-%   options.Tdcm         - [start end] time window in ms
-%   options.Fdcm         - [start end] Frequency window in Hz
-%   options.D            - time bin decimation       (usually 1 or 2)
-%   options.spatial      - 'ECD', 'LFP' or 'IMG'     (see spm_erp_L)
-%   options.model        - 'ERP', 'SEP', 'CMC', 'LFP', 'NMM' or 'MFM'
-%
-% Estimates:
-%--------------------------------------------------------------------------
-% DCM.dtf                   - directed transfer functions (source space)
-% DCM.ccf                   - cross covariance functions (source space)
-% DCM.coh                   - cross coherence functions (source space)
-% DCM.fsd                   - specific delay functions (source space)
-% DCM.pst                   - peristimulus time
-% DCM.Hz                    - frequency
-%
-% DCM.Ep                    - conditional expectation
-% DCM.Cp                    - conditional covariance
-% DCM.Pp                    - conditional probability
-% DCM.Hc                    - conditional responses (y), channel space
-% DCM.Rc                    - conditional residuals (y), channel space
-% DCM.Hs                    - conditional responses (y), source space
-% DCM.Ce                    - eML error covariance
-% DCM.F                     - Laplace log evidence
-% DCM.ID                    -  data ID
 ```
