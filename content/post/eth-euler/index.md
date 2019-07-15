@@ -6,7 +6,7 @@ subtitle = ""
 summary = ""
 
 date = 2019-07-03T15:21:13+02:00
-draft = true
+draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
 authors = ["Inês Pereira"]
@@ -38,11 +38,12 @@ categories = []
   focal_point = ""
 +++
 
-🖍 **Nota bene**: You will need to be an ETH member to use Euler. However, this
+🖍 *Nota bene*: You will need to be an ETH member to use Euler. However, this
 post might still be useful if you happen to be working on another cluster which
-uses the [LSF](https://en.wikipedia.org/wiki/Platform_LSF)  batch system. Also, I am currently mainly using
-MATLAB to run my simulations, so you'll also find some MATLAB specific advice.
+uses the [LSF](https://en.wikipedia.org/wiki/Platform_LSF)  batch system. Also relevant: I am currently mainly using MATLAB to run my simulations, so you'll find some MATLAB specific advice.
 For Python specifics, check out [this page](https://scicomp.ethz.ch/wiki/Python).
+<!-- Also note that [GPUs are only provided in the Leohnard cluster](https://scicomp.ethz.ch/wiki/Getting_started_with_GPUs)
+and access is restricted to shareholders. -->
 
 ⌛️ **TL;DR**: check out the end of the blog post for a practical suggestion on how
 to structure your job submission scripts.
@@ -83,8 +84,36 @@ Open a terminal and type:
 ssh username@euler.ethz.ch
 ```
 Now type in your NETHZ password... and you're in!
-If it's the first time you're logging in, the only extra step is to accept the
+If this is the first time you're logging in, the only extra step is to accept the
 cluster's usage rights.
+
+### File transfer
+
+To run your jobs, you'll need to transfer your scripts and data to the cluster.
+To do so, you can use the `scp` command. The general use is as follows:
+```bash
+scp [options] source destination
+```
+<!-- There are some difference between the two commands, but I'll let you read more
+about [here](https://stackoverflow.com/questions/20244585/how-does-scp-differ-from-rsync)
+and [here](https://superuser.com/questions/393608/difference-between-scp-and-rsync). -->
+
+<!-- For now, let's focus on the `scp` command.  -->
+Specifically, what you'll need to type is:
+```bash
+scp file username@euler.ethz.ch:path/to/destination # from local computer to Euler
+scp username@euler.ethz.ch:path/to/source/file path/to/destination # from Euler to local computer
+```
+
+To transfer directories, the option `-r` needs to be used:
+```bash
+scp -r directory username@euler.ethz.ch:path/to/destination # from local computer to Euler
+scp -r username@euler.ethz.ch:path/to/source/directory path/to/destination # from Euler to local computer
+```
+
+You'll find that acquainting yourself with bash scripting will come in handy for
+this type of commands. Check out the cheat sheet I left in the end of the blog post
+for just that!
 
 ### A word on data storage
 When it comes to personal storage, every user has access to two options:
@@ -101,11 +130,32 @@ Scratch, on the other hand, is designed as a fast short-term storage. There is
 *no* backup and ETH will warn you that it is *purged on a regular basis*. Your disk
 quota in scratch rises to 2.5 TB and a maximum of 1 000 000 files.
 
+To check how far away (or how close...) you are from your quota, use the command
+`lquota`:
+
+```bash
+lquota
++-----------------------------+-------------+------------------+------------------+------------------+
+| Storage location:           | Quota type: | Used:            | Soft quota:      | Hard quota:      |
++-----------------------------+-------------+------------------+------------------+------------------+
+| /cluster/home/user          | space       |          8.85 GB |         17.18 GB |         21.47 GB |
+| /cluster/home/user          | files       |            25610 |            80000 |           100000 |
++-----------------------------+-------------+------------------+------------------+------------------+
+| /cluster/shadow             | space       |          4.10 kB |          2.15 GB |          2.15 GB |
+| /cluster/shadow             | files       |                2 |            50000 |            50000 |
++-----------------------------+-------------+------------------+------------------+------------------+
+| /cluster/scratch/user       | space       |        237.57 kB |          2.50 TB |          2.70 TB |
+| /cluster/scratch/user       | files       |               29 |          1000000 |          1500000 |
++-----------------------------+-------------+------------------+------------------+------------------+
+```
+
 For more information on data storage (*e.g.* options for shareholders), be sure
-to check out this [presentation](https://scicomp.ethz.ch/w/images/a/ad/Getting_started_with_Euler_(September_2016).pdf).
+to check out this [presentation](https://scicomp.ethz.ch/w/images/a/ad/Getting_started_with_Euler_(September_2016).pdf)
+or this [page](https://scicomp.ethz.ch/wiki/Storage_systems).
 
 ### Using Euler
-Using Euler boils down to this:
+All right! Now we're ready to start using the cluster!
+And it all boils down to this:
 ```
 bsub [LSF options] job
 ```
@@ -217,34 +267,53 @@ If you only have two models and don't mind writing out all the dependencies, you
 can opt for:
 
 ```bash
-bsub -J job1 command1
-bsub -J job2 command2
-bsub -J job3 -w "done(job1) && done(job2)" command3
+bsub -J job1 command1 # train model 1
+bsub -J job2 command2 # train model 2
+bsub -J job3 -w "done(job1) && done(job2)" command3 # choose best model
 ```
 
 If, on the other hand, you are fitting a lot of models in step 2, you should
 consider using [job arrays](https://scicomp.ethz.ch/wiki/Job_arrays).
 
 ```bash
-bsub -J job[1-10] command1
+bsub -J job[1-10] command
 ```
 
-`bsub -J job[1-10]` defines the name of the array and the number of jobs it
+`-J job[1-10]` defines the name of the array and the number of jobs it
 will contain (in this case: 10).
-You then need to get the JOBID (*not* the JOB_NAME) of this job array. This is
-because the JOBID with be the same for the whole job array, but different jobs
+You then need to get the JOBID of this job array. This is
+because the JOBID will be the same for the whole job array, but different subjobs
 will have different names.
-To get the JOBID, one way it to use `bjobs` and just copy the JOBID (let's say: 94709747).
+To get the JOBID, one way is to use `bjobs` and just copy the JOBID (let's say: 94709747).
 Then, you can write:
 
 ```bash
 bsub -w "numdone(94709747,*)" -J job2 command2
 ```
 
+However, if you prefer (I would) to have the JOBID extracted automatically, then
+this is what you want:
+
+```bash
+JOBID=$(bsub command1 | awk '/is submitted/{print substr($2, 2, length($2)-2);}')
+if [ -n "$JOBID" ]; then
+        bsub -w "numdone($JOBID,*)" command2
+fi
+```
+The first line of code will run the job it contains *and* extract the job's ID.
+Filling two needs with one deed 💪.
+Oh wait, but what if I need to pass the array index as an argument to a function?
+That can also be done! You can pass `$LSB_JOBINDEX` as a command-line argument.
+Note the backslash `\` before `$LSB_JOBINDEX`:
+
+```bash
+bsub -J "job[1-10]" matlab -nodisplay -singleCompThread -r "my_function(\$LSB_JOBINDEX)"
+```
+
 ## A modest template
 Here is a template of the type of scripts I like. Notice the following:
 
-- Use of `$1`: Taking in arguments from the command line is in my opinion, really nice.
+- Use of `$1`: Taking in arguments from the command line is, in my opinion, really nice.
 It saves you the time of opening [vim](https://en.wikipedia.org/wiki/Vim_(text_editor))
 and having to edit, save, quit. You just type your arguments and click enter!
 - Use of `echo` with if/else statements to check if everything is running as planned.
@@ -295,6 +364,46 @@ fi
 
 ```
 
+Compare that to a version which uses job arrays:
+
+```bash
+#!/bin/bash
+
+# Loading matlab module
+echo loading matlab module...
+module load new matlab/R2017b
+
+# Necessary input
+arg1=$1 # takes in first input argument from command line
+arg2=$2 # second input argument from command line
+niter=50
+
+# Run your loop
+read -p "Run your cool script? [y: yes; n: no]" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    for ((i = 1; i <= $niter; i++)); do
+        # Run setup
+        if [[ $i -eq 1 ]]; then
+          bsub -J "Setup$i" matlab -singleCompThread -nodisplay -r "setup($arg1,$arg2,$i)"
+        else
+          last_iter=$((i-1))
+          bsub -J "Setup$i" -w "done(saveBest$last_iter)" matlab -singleCompThread -nodisplay -r "setup($arg1,$arg2,$i)"
+        fi
+        # Fit your models and extract JOBID from job array
+        max_sim=$((nparam-i+1))
+        JOBID=$(bsub -J "fitModels$i[1-$max_sim]" -w "done(Setup$i)" matlab -singleCompThread -nodisplay -r "fit_models($arg1,$arg2,\$LSB_JOBINDEX)" | awk '/is submitted/{print substr($2, 2, length($2)-2);}')
+        # Save the best model using JOBID as a dependency
+        if [ -n "$JOBID" ]; then
+          bsub -J "saveBest$i" -w "numdone($JOBID,*)" matlab -singleCompThread -nodisplay -r "save_best_model($arg1,$arg2,$i)"
+        fi
+    done
+fi
+
+```
+
+
+
 ## Other useful resources
 
 To use Euler, you'll find yourself googling *a lot* of bash commands. In addition,
@@ -304,4 +413,7 @@ To ease the pain, here are a few nice cheat sheets:
 - [Bash scripting  cheat sheet](https://devhints.io/bash)
 - [Vim cheat sheet](https://devhints.io/bash)
 
+
+<p style="text-align: center;">
 Happy computations ! 👾👾👾
+</p>
