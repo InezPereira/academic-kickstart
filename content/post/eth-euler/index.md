@@ -411,7 +411,7 @@ figuring out how vim works can also be overwhelming in the beginning.
 To ease the pain, here are a few nice cheat sheets:
 
 - [Bash scripting  cheat sheet](https://devhints.io/bash)
-- [Vim cheat sheet](https://devhints.io/bash)
+- [Vim cheat sheet](https://devhints.io/vim)
 
 
 <p style="text-align: center;">
