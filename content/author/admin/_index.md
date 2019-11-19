@@ -16,7 +16,7 @@ role = "Neurology resident and Computational Neuroscience enthusiast"
 organizations = [ { name = "UZH & ETH Zurich", url = "" } ]
 
 # Short bio (displayed in user profile at end of posts)
-bio = "My research interests include using modelling approaches to better understand neurological and psychiatric diseases."
+bio = "My research interests include using modeling approaches to better understand neurological and psychiatric diseases."
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email = ""
@@ -39,7 +39,7 @@ user_groups = ["Researchers", "Visitors"]
 #  year = 2012
 
 [[education.courses]]
-  course = "MSc Neural Systems and Computation "
+  course = "MSc Neural Systems and Computation"
   institution = "University of Zurich & ETH Zurich"
   year = 2020
 
