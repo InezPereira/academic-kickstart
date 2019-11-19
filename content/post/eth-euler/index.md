@@ -310,6 +310,25 @@ Note the backslash `\` before `$LSB_JOBINDEX`:
 bsub -J "job[1-10]" matlab -nodisplay -singleCompThread -r "my_function(\$LSB_JOBINDEX)"
 ```
 
+💣 Ok, now an even harder thing to do would be to set a dependency on multiple
+job arrays. That can also be done, with a few bash tricks:
+
+```bash
+dep_cond="" # create a variable to store the full dependency
+for i in {1..50}; do
+  JOBID=$(bsub -J "job$i[1-10]" matlab -nodisplay -singleCompThread -r "my_function(\$LSB_JOBINDEX)" | awk '/is submitted/{print substr($2, 2, length($2)-2);}')
+  dep_cond+=" && numdone($JOBID,*)" # add new dependencies
+done
+
+dep_cond=${dep_cond:4} # remove leading " && "
+
+bsub -w "$dep_cond" matlab -singleCompThread -nodisplay -r "my_function2()"
+
+```
+
+A huge thank you to the Euler cluster support for this one! In particular to
+[Oliver Byrde](https://ethz.ch/services/en/organisation/departments/it-services/people/person-detail.html?persid=88087)!
+
 ## A modest template
 Here is a template of the type of scripts I like. Notice the following:
 

@@ -87,6 +87,14 @@ So here are a few tricks to make your handling FreeSurfer's GUI, Freeview, easie
  ```
  ./freeview.sh
  ```
+
+For more information on how to use the `freeview` command, type:
+```
+freeview --help
+```
+You'll get a list of the available sub-options to make the most out of your image
+visualization!
+
 All right, we have opened Freeview and we're ready to start interacting with the GUI!
 
 ## 2. Check out the available Freeview keyboard shortcuts!
@@ -137,6 +145,7 @@ When you're in Voxel/Recon/ROI edit mode:
 
 That concludes this short tutorial about Freeview!
 If you want to read/know more, the full Freeview Guide can be found [here](https://surfer.nmr.mgh.harvard.edu/fswiki/FreeviewGuide).
+Also, check out this [cool Freeview demo](https://www.youtube.com/watch?v=Mv-ECowxq2o).
 
 
 
