@@ -43,6 +43,7 @@ categories = []
 Define it better. Say that's is really good in terms of overfitting!
 
 A few key ideas:
+
 - You combine weak learners to make an ensemble classifier which performs well
 - Some learners have more say in classification than others
 - Each new best weak learner takes the errors from the previous classifiers into account.
