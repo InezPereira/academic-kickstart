@@ -16,7 +16,7 @@ role = "Neurology resident and Computational Neuroscience enthusiast"
 organizations = [ { name = "UZH & ETH Zurich", url = "" } ]
 
 # Short bio (displayed in user profile at end of posts)
-bio = "My research interests include using modeling approaches to better understand neurological and psychiatric diseases."
+bio = "My research interests include using modeling approaches to better understand neurological and psychiatric diseases. Views expressed are my own."
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email = ""
