@@ -38,7 +38,7 @@ categories = []
   focal_point = ""
 +++
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">When the corona crises started we decided to go online with our <a href="https://twitter.com/CompPsychiatry?ref_src=twsrc%5Etfw">@CompPsychiatry</a> course and make it free of charge. The result was a course that ended up being 4x bigger than usual (&gt;1000 participants) and more inclusive than ever. Thanks to everyone who helped pull this off!!! <a href="https://t.co/ybi8QrgI19">pic.twitter.com/ybi8QrgI19</a></p>&mdash; Frederike Petzschner (@rikepetzschner) <a href="https://twitter.com/rikepetzschner/status/1304448759460433920?ref_src=twsrc%5Etfw">September 11, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{{< tweet 1304448759460433920 >}}
 
 This year's Computational Psychiatry Course (CPC) Zurich, like many other events all over the world, faced the challenge of moving to an online setting. Much in the spirit of [this post](https://medium.com/@kording/how-to-run-big-neuro-science-conferences-online-neuromatch-io-49c694c7e65d), I'll share here the combination of tools that was used and how useful they proved to be at the CPC Zurich 2020. All the materials from this year's and previous events can be found [here](https://www.translationalneuromodeling.org/cpcourse/). This year's video recordings can be found [here](https://video.ethz.ch/lectures/d-itet/2020/autumn/227-0971-00L.html).
 
