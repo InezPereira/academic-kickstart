@@ -49,8 +49,7 @@ that I, personally, found very useful.
 For a more in-depth take on the following and other points, do consult the series
 of Points of View columns published in *Nature Methods*.
 A collection of these can be found [here](https://www.scientificamerican.com/products/nature-products/nature-collections-visual-strategies-for-biological-data/).
-Another great online read can be found [here]
-(https://www.knowablemagazine.org/article/mind/2019/science-data-visualization).
+Another great online read can be found [here](https://www.knowablemagazine.org/article/mind/2019/science-data-visualization).
 
 Please note that all of these recommendations
 are meant to be general and that one should always take into account any

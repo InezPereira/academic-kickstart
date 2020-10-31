@@ -50,7 +50,7 @@ to structure your job submission scripts.
 
 ## Euler ?
 
-[Euler](https://scicomp.ethz.ch/w/images/a/ad/Getting_started_with_Euler_(September_2016).pdf)
+[Euler](https://scicomp.ethz.ch/w/images/b/be/Getting_started_with_Euler_%28February_2020%29.pdf)
 is the high performance computing cluster at ETH Zurich.
 <!-- Its name stands for *Erweiterbarer, Umweltfreundlicher, Leistungsfähiger ETH Rechner*. -->
 Like its predecessors, Euler follows a shareholder model, and is for the most part financed by its users.
@@ -77,10 +77,10 @@ In this post, we'll go through:
 ### Connecting to Euler
 The first thing you need to do is to connect to Euler.
 To do that, you either need to be within the ETH network or connected via VPN.
-The only requirement to login is a valid NETHZ account (no forms to fill out 🎉).
+The only requirement to login is a valid ETH account (no forms to fill out 🎉).
 Open a terminal and type:
 
-```bash
+```
 ssh username@euler.ethz.ch
 ```
 Now type in your NETHZ password... and you're in!
@@ -91,7 +91,8 @@ cluster's usage rights.
 
 To run your jobs, you'll need to transfer your scripts and data to the cluster.
 To do so, you can use the `scp` command. The general use is as follows:
-```bash
+
+```
 scp [options] source destination
 ```
 <!-- There are some difference between the two commands, but I'll let you read more
@@ -100,13 +101,13 @@ and [here](https://superuser.com/questions/393608/difference-between-scp-and-rsy
 
 <!-- For now, let's focus on the `scp` command.  -->
 Specifically, what you'll need to type is:
-```bash
+```
 scp file username@euler.ethz.ch:path/to/destination # from local computer to Euler
 scp username@euler.ethz.ch:path/to/source/file path/to/destination # from Euler to local computer
 ```
 
 To transfer directories, the option `-r` needs to be used:
-```bash
+```
 scp -r directory username@euler.ethz.ch:path/to/destination # from local computer to Euler
 scp -r username@euler.ethz.ch:path/to/source/directory path/to/destination # from Euler to local computer
 ```
@@ -117,7 +118,7 @@ for just that!
 
 ### A word on data storage
 When it comes to personal storage, every user has access to two options:
-```bash
+```
 HOME=/cluster/home/username
 SCRATCH=/cluster/scratch/username
 ```
@@ -133,7 +134,7 @@ quota in scratch rises to 2.5 TB and a maximum of 1 000 000 files.
 To check how far away (or how close...) you are from your quota, use the command
 `lquota`:
 
-```bash
+```
 lquota
 +-----------------------------+-------------+------------------+------------------+------------------+
 | Storage location:           | Quota type: | Used:            | Soft quota:      | Hard quota:      |
@@ -150,7 +151,7 @@ lquota
 ```
 
 For more information on data storage (*e.g.* options for shareholders), be sure
-to check out this [presentation](https://scicomp.ethz.ch/w/images/a/ad/Getting_started_with_Euler_(September_2016).pdf)
+to check out this [presentation](https://scicomp.ethz.ch/w/images/b/be/Getting_started_with_Euler_%28February_2020%29.pdf)
 or this [page](https://scicomp.ethz.ch/wiki/Storage_systems).
 
 ### Using Euler
@@ -183,7 +184,7 @@ Now mind you that a job can be:
 
 Ok, so far so good. Now, to use MATLAB, you'll first need to load it.
 
-```bash
+```
 module load new matlab/R2018a
 ```
 
@@ -192,7 +193,7 @@ configure the MATLAB version you want to run, check out [this link](https://scic
 
 Once that's done, let's say you would like to fit a model using a script you wrote beforehand.
 To submit your job, you then type:
-```bash
+```
 bsub -J "fitModel" matlab -singleCompThread -nodisplay -r "fit_model"
 ```
 Pardon? What are all *those* options? It's fairly easy:
@@ -202,11 +203,12 @@ Pardon? What are all *those* options? It's fairly easy:
 - `-nodisplay`: just explicitly tell MATLAB no graphical display is available.
 
 
-⚠️ **#ProTip**: no `.m` at the end of your script name (bsub doesn’t require that you pass the file extension).
-That has once cost me an embarrassing amount of time.
+⚠️ **#MatlabProTip**: the `-r` option must be followed by a function. That means that you should omit the `.m` at the end of your script name. This can be confusing or easily overlooked if your function doesn’t take in any arguments (as in the example above), and has once cost me an embarrassing amount of time.
+
+⚠️⚠️ **#Update**: the `-r` option is deprecated in Matlab 2019a and newer versions. Instead, the `-batch` option should be used. For more on this, check out [this link](https://ch.mathworks.com/help/matlab/ref/matlablinux.html).
 
 You have submitted your job and get back:
-```bash
+```
 Generic job.
 Job <94709747> is submitted to queue <normal.4h>.
 ```
@@ -215,7 +217,7 @@ That looks good. To manage your jobs, you'll then need two new commands:
 `bjobs` and `bkill`, which let you monitor or kill all jobs or specific jobs
 (for more details, read [this reference](https://scicomp.ethz.ch/wiki/LSF_mini_reference)).
 
-```bash
+```
 bjobs
 > JOBID      USER   STAT  QUEUE      FROM_HOST   EXEC_HOST   JOB_NAME   SUBMIT_TIME
 > 94709747   jdoe   RUN   normal.4h   euler01  eu-c7-106-0  fitModel   Jul  3 07:19
@@ -242,7 +244,7 @@ Now that means that you only want step 2 to kick in once the setup is ready.
 That's called [job chaining](https://scicomp.ethz.ch/wiki/Job_chaining) and can
 be done as follows:
 
-```bash
+```
 bsub -J job1 command1
 bsub -J job2 -w "done(job1)" command2
 bsub -J job3 -w "done(job2)" command3
@@ -255,7 +257,7 @@ true and `job2` will stand, pending, forever...
 If you actually, for some heartless reason, don't really care what happens to
 `job1`, then you should write:
 
-```bash
+```
 bsub -J job1 command1
 bsub -J job2 -w "ended(job1)" command2
 ```
@@ -266,7 +268,7 @@ once *all* models in step 2 are finished, then you might run into a problem.
 If you only have two models and don't mind writing out all the dependencies, you
 can opt for:
 
-```bash
+```
 bsub -J job1 command1 # train model 1
 bsub -J job2 command2 # train model 2
 bsub -J job3 -w "done(job1) && done(job2)" command3 # choose best model
@@ -275,7 +277,7 @@ bsub -J job3 -w "done(job1) && done(job2)" command3 # choose best model
 If, on the other hand, you are fitting a lot of models in step 2, you should
 consider using [job arrays](https://scicomp.ethz.ch/wiki/Job_arrays).
 
-```bash
+```
 bsub -J job[1-10] command
 ```
 
@@ -287,14 +289,14 @@ will have different names.
 To get the JOBID, one way is to use `bjobs` and just copy the JOBID (let's say: 94709747).
 Then, you can write:
 
-```bash
+```
 bsub -w "numdone(94709747,*)" -J job2 command2
 ```
 
 However, if you prefer (I would) to have the JOBID extracted automatically, then
 this is what you want:
 
-```bash
+```
 JOBID=$(bsub command1 | awk '/is submitted/{print substr($2, 2, length($2)-2);}')
 if [ -n "$JOBID" ]; then
         bsub -w "numdone($JOBID,*)" command2
@@ -306,14 +308,14 @@ Oh wait, but what if I need to pass the array index as an argument to a function
 That can also be done! You can pass `$LSB_JOBINDEX` as a command-line argument.
 Note the backslash `\` before `$LSB_JOBINDEX`:
 
-```bash
+```
 bsub -J "job[1-10]" matlab -nodisplay -singleCompThread -r "my_function(\$LSB_JOBINDEX)"
 ```
 
 💣 Ok, now an even harder thing to do would be to set a dependency on multiple
 job arrays. That can also be done, with a few bash tricks:
 
-```bash
+```
 dep_cond="" # create a variable to store the full dependency
 for i in {1..50}; do
   JOBID=$(bsub -J "job$i[1-10]" matlab -nodisplay -singleCompThread -r "my_function(\$LSB_JOBINDEX)" | awk '/is submitted/{print substr($2, 2, length($2)-2);}')
@@ -343,7 +345,7 @@ Requiring me to type in a confirmatory "yes" adds an extra check.
 This script reconstructs the steps we had seen before, but with multiple iterations
 added, hence the for loop.
 
-```bash
+```
 #!/bin/bash
 
 # Loading matlab module
@@ -385,7 +387,7 @@ fi
 
 Compare that to a version which uses job arrays:
 
-```bash
+```
 #!/bin/bash
 
 # Loading matlab module
