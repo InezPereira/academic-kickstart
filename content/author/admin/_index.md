@@ -9,11 +9,11 @@ authors = ["admin"]
 superuser = true
 
 # Role/position
-role = "Neurology resident and Computational Neuroscience enthusiast"
+role = "Physician and Computational neuroscientist" #. Doctoral student at the Translational Neuromodeling Unit"
 
 # Organizations/Affiliations
 #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
-organizations = [ { name = "UZH & ETH Zurich", url = "" } ]
+organizations = [ { name = "Translational Neuromodeling Unit | UZH & ETH Zurich", url = "https://www.tnu.ethz.ch/en/home" } ]
 
 # Short bio (displayed in user profile at end of posts)
 bio = "My research interests include using modeling approaches to better understand neurological and psychiatric diseases. Views expressed are my own."
@@ -39,12 +39,17 @@ user_groups = ["Researchers", "Visitors"]
 #  year = 2012
 
 [[education.courses]]
+  course = "Doctoral student"
+  institution = "University of Zurich & ETH Zurich"
+  year = ""
+
+[[education.courses]]
   course = "MSc Neural Systems and Computation"
   institution = "University of Zurich & ETH Zurich"
   year = 2020
 
 [[education.courses]]
-  course = "Medicine"
+  course = "Medical degree"
   institution = "NOVA Medical School of Lisbon"
   year = 2016
 
@@ -61,12 +66,12 @@ user_groups = ["Researchers", "Visitors"]
 [[social]]
   icon = "twitter"
   icon_pack = "fab"
-  link = "https://twitter.com/iibpereira"
+  link = "https://twitter.com/nespereira_"
 
-#[[social]]
-#  icon = "google-scholar"
-#  icon_pack = "ai"
-#  link = "https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ"
+[[social]]
+  icon = "google-scholar"
+  icon_pack = "ai"
+  link = "https://scholar.google.com/citations?user=rDUWp_wAAAAJ&hl=en#"
 
 [[social]]
   icon = "github"
@@ -87,4 +92,4 @@ user_groups = ["Researchers", "Visitors"]
 
 +++
 
-Just another human who happens to love combining mathematical modelling and translational research.
+Physician who happens to love combining mathematical modelling and translational research.
