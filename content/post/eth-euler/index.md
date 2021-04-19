@@ -9,7 +9,7 @@ date = 2019-07-03T15:21:13+02:00
 draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = ["Inês Pereira"]
+authors = []
 
 # Is this a featured post? (true/false)
 featured = true

@@ -6,7 +6,7 @@ subtitle = ""
 summary = ""
 
 date = 2020-09-13T14:53:21+02:00
-draft = false
+draft = true
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
 authors = []
@@ -74,11 +74,11 @@ Besides the usual #general, #fun and #random channels, the following other chann
 - #q_and_a: this channel was extensively used to follow up on discussions held
 during the webinar and also provided an opportunity for attendees to ask further questions.
 - #resources: to refer to journal articles, books, videos, slides, links to open
-source software packages... some speakers provided even extensive reading lists!
+source software packages... some speakers even provided extensive reading lists!
 - #tutorial_helpdesk: support was provided via this channel for the tutorials
 involving installation of software.
 - #zoom: to discuss technical issues related to zoom. Attendees would use this
-channel to report technical issues during the webinar (and sometimes even propose
+channel to report issues during the webinar (and sometimes even propose
 solutions).
 - #job_postings: self-descriptive 🙃
 - #social: a space where attendees could introduce themselves and start discussions
@@ -93,10 +93,10 @@ only get to hear and talk to someone once you have sufficiently approached them.
 This is essential, because it enables users to form groups and have conversations
 in parallel... like in real life, basically. And, like in real life, you can move
 from one group to another and actually run into people you know.
-Gather offers a set of maps you can use off the shelf, but making your own
-customized maps is not only easy, but also a lot of fun!
+Gather offers a set of maps you can use off the shelf. However, making your own
+customized maps is not only easy, it's also a lot of fun!
 Tutorials on how to do this can be found on [Gather's YouTube channel](https://www.youtube.com/channel/UCd4uhlois5n9k6fRuVwSCuA).
-I personally used online tools such as [this platform](https://www.pixilart.com/)
+I personally use online tools such as [this platform](https://www.pixilart.com/)
 to add more pixel art and nerdy references 🤓.
 
 ## Mind-matching
