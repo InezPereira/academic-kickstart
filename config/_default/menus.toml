@@ -23,6 +23,12 @@
 #   url = "#featured"
 #   weight = 40
 
+ [[main]]
+   name = "Talks"
+   # url = "/talk/"
+   url = "#talks"
+   weight = 50
+
 # [[main]]
 #   name = "Tutorials"
 #   url = "/tutorial/"
